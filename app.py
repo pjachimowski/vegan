@@ -18,6 +18,10 @@ def get_vegan_day():
     recipes=mongo.db.recipes.find())
 
 
+@app.route('/add_recipe')
+def add_recipe():
+    return render_template("add_recipe.html", 
+    recipes=mongo.db.recipes.find())
 
 
 if __name__ == '__main__':
