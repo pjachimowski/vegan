@@ -10,7 +10,52 @@
     <title>Vegan Day</title>
   </head>
   <body>
-    
+
+<header>
+		<nav class="navbar">
+			<div class="nav-wrapper">
+				<a href="{{url_for('get_vegan_day')}}" class="brand-logo my-auto logo"></a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="">Home</a></li>
+					<li><a href="">New Recip</a></li>
+					<li><a href="">Manage Categories</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a class="card-btn" href="">Home</a></li>
+					<li><a class="card-btn" href="">New Recip</a></li>
+					<li><a class="card-btn" href="">Manage Categories</a></li>
+				</ul>
+			</div>
+            <a href="{{url_for('add_recipe')}}" class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+                    <i class="material-icons">add</i>
+                </a>
+		</nav>
+	</header>
+
+
+    <!-- <header>
+        <nav class="navbar">
+            <div class="nav-wrapper">
+                <a href="{{url_for('get_vegan_day')}}" class="brand-logo">V D</a>
+                <a href="#" data-activities="mobile-demo" class="button-collapse sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{{url_for('get_vegan_day')}}">A link</a></li>
+                    <li><a href="{{url_for('get_vegan_day')}}">A second link</a></li>
+                    <li><a href="{{url_for('get_vegan_day')}}">A third link</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a class="card-btn" href="{{url_for('get_vegan_day')}}">A link</a></li>
+                    <li><a class="card-btn" href="{{url_for('get_vegan_day')}}">A second link</a></li>
+                    <li><a class="card-btn" href="{{url_for('get_vegan_day')}}">A third link</a></li>
+                </ul>
+            
+            <div class="nav-content">
+                
+            </div> 
+            </div>
+        </nav>
+    </header> -->
     <div class="container">
       {% block content %} {% endblock %}
     </div>
@@ -21,6 +66,7 @@
       $(document).ready(function () {
         $(".collapsible").collapsible();
         $("select").material_select();
+        $(".button-collapse").sideNav();
       });
     </script>
   </body>

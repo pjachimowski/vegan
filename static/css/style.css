@@ -9,3 +9,26 @@
 .task-header {
     margin-top: 5px;
 }
+
+a.card-btn {
+    color: rgb(0, 0, 0) !important;
+}
+
+a {
+    color: rgb(255, 255, 255) !important;
+}
+
+.navbar {
+    height: 70px;
+    background-color: green;
+}
+
+.logo {
+    background: url("/static/css/vegan_day.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 90px;
+    margin: 10px;
+}
