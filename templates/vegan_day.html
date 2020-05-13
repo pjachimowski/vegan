@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1> Hello World</h1>
+{% for recipe in recipes %}
+{{recipe.recipe_name}}
+{{recipe.category_name}}
+{{recipe.recipe_description}}
+{{recipe.gluten_free}}
+{{recipe.due_date}}
+{% endfor %}
+
+
+<ul class="collapsible">
+	<li>
+		<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+		<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+	</li>
+	<li>
+		<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+		<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+	</li>
+	<li>
+		<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+		<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+	</li>
+</ul>
+
+
+{% endblock %}
