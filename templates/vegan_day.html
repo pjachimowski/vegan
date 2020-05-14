@@ -20,12 +20,12 @@
     </div>
 </div>
 <div class="row">
-    <div class="col s6">
+    <div class="col s12 l6">
         <div class="how-to">
             <p>Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda perferendis veritatis quod inventore, quia dolorem totam incidunt nihil aliquid quidem possimus id similique aspernatur nisi. </p>
         </div> 
     </div>
-    <div class="col s6">
+    <div class="col s12 l6">
         <div class="how-to">
             <div class="how-to-logo"></div>
         </div> 
@@ -37,22 +37,25 @@
 <div class="row">
     
     <div class="col s4">
+        <h3 class="centertxt"> Breakfast </h3>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae ipsum voluptas similique, ullam consequuntur corrupti sunt fuga commodi repellat incidunt cupiditate, officiis accusamus iusto laudantium! Velit, </p>
     </div>
 
     <div class="col s4">
+        <h3 class="centertxt"> Lunch </h3>
         <ul class="collapsible popout" data-collapsable="accordion">
             {% for recipe in recipes %}
             <li>
-                <div class="collapsible-header font-dark">
-                    
-                        <i class="material-icons">expand_more</i>
-                    
-                    
-                        <strong>{{recipe.recipe_name}}</strong>
-                    
+                <div class="collapsible-header font-dark" 
+                style="
+                    background: url('{{recipe.recipe_image}}');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;">
+                    <i class="material-icons">expand_more</i>
                 </div>
                 <div class="collapsible-body">
+                <strong>{{recipe.recipe_name}} : </strong> <hr> 
                     <span>
                     {{recipe.recipe_description}}
                     </span>
@@ -63,9 +66,24 @@
     </div>
 
     <div class="col s4">
+    <h3 class="centertxt"> Dinner </h3>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae ipsum voluptas similique, ullam consequuntur corrupti sunt fuga commodi repellat incidunt cupiditate, officiis accusamus iusto laudantium! Velit, </p>
     </div>
 </div>
+<div class="row">
+    <div class="col s12">
+        <div class="centertxt">
+            <div class="d-block d-sm-block pj-image">
+		        <img src="/static/css/pj.jpg" height="100" width="100" alt="founder">
+            </div>
+            <p class="blockquote">"Place where I always find inspiration for my delicious vegan food"
+            </p>
+            <p class="founder"> - Patryk Jachimowski, Vegan Inspired Founder</p>
+        </div>
+    </div>
+</div>
+
+
 {% endblock %}
 
 <!-- </div>
