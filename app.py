@@ -25,7 +25,7 @@ def add_recipe():
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
-    recipe =  mongo.db.recipes
+    recipe = mongo.db.recipes
     recipe.insert_one(request.form.to_dict())
     return redirect(url_for('get_vegan_day'))
 
@@ -45,8 +45,12 @@ def update_recipe(recipe_id):
     {
         'recipe_name':request.form.get('recipe_name'),
         'category_name':request.form.get('category_name'),
+        'recipe_short':request.form.get('recipe_short'),
         'recipe_description': request.form.get('recipe_description'),
-        'gluten_free':request.form.get('gluten_free') 
+        'recipe_ingredients': request.form.get('recipe_ingredients'),
+        'recipe_method': request.form.get('recipe_method'),
+        'recipe_image': request.form.get('recipe_image'),
+        'gluten_free':request.form.get('gluten_free'),
     })
     return redirect(url_for('get_vegan_day'))
 

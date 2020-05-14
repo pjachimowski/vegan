@@ -1,8 +1,8 @@
 body {
-    background-color: #2e2e2e;
-    color: white;
+    background-image: linear-gradient(to bottom right, #2e2e2e, #161616);
+    color: #e4e4e4;
 }
-   /* background-image: linear-gradient(to bottom, #000000, #231511, #342812, #33411c, #005c40);  */
+
 hr { 
   height: 1px;
   width: 70%;
@@ -11,6 +11,9 @@ hr {
   border-color: #00eea7;
 }
 
+.font-dark {
+    color: #2e2e2e;
+}
 
 /*---   navbar -------------------------*/
 
@@ -53,16 +56,6 @@ h3.centertxt {
     border-left:   0px solid  black;
 }
 
-.intro-logo {
-    background: url("/static/css/vegan_day.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 125px;
-    width: 215px;
-    text-align: center;
-}
-
 /* ----- intro button --------*/
 
 .button_d {
@@ -77,22 +70,37 @@ h3.centertxt {
 }
 
 .button_d:hover {
-    color: #008f99   !important;
+    color: #e4e4e4  !important;
     border-radius: 50px;
-    border-color: #008f99  !important;
+    border-color:  #e4e4e4 !important;
     transition: all 0.3s ease 0s;
 }
 
-/* --- how to panel ----------------------------*/
+/* --- how-to panel ----------------------------*/
 
 .how-to {
     text-align: center;
+    margin: 150px 20px;
+    align-content: center;
+}
+
+.how-to-logo {
+    background: url("/static/css/vegan_day.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 125px;
+    width: 215px;
+    margin: 150px 20px 150px 150px;
 }
 
 
 /*---  home page accordion ---------------------*/
-.task-header {
+
+
+.collapsible-header {
     margin-top: 5px;
+    align-content: left;
 }
 
 .btn-small {
@@ -107,5 +115,28 @@ a.card-btn {
     color: rgb(0, 0, 0) !important;
 }
 
+/*----- Add Recipe -------------*/
+
+.upload-text {
+    padding: 15px;
+    border:  1px solid #00eea7;
+    border-radius: 5px;
+    font-size: x-small;
+}
+
+/*------- footer ---------------*/
+
+.footer {
+    background: url("/static/css/footer_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top: 1px solid  #00eea7;
+}
+
+.footer-copyright {
+    font-size: xx-small;
+    background-color:  #2e2e2e !important;
+}
 
 

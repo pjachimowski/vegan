@@ -1,54 +1,96 @@
 {% extends 'base.html' %} {% block content %}
-
-<h3>Add Task </h3>
-
-<div class="row">
-	<form action="{{url_for('insert_recipe')}}" method="POST" class="col s12">
-		<div class="row">
-			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">poll</i>
-					<select id="category" name="category_name">
-                    <option value="" disabled selected>Choose Category</option>
-                    {% for cat in categories %}
-                    <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                    {% endfor %}
-                    </select>
-					<label>Recipe Category</label>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="input-field col s12">
-				<i class="material-icons prefix">account_circle</i>
-				<input id="recipe_name" name="recipe_name" type="text" class="validate">
-				<label for="icon_prefix">Recipe Name</label>
-			</div>
-		</div>
-		<div class="row">
-			<div class="input-field col s12">
-				<i class="material-icons prefix">phone</i>
-				<textarea id="recipe_description" name="recipe_description" class="materialize-textarea"></textarea>
-				<label for="icon_telephone">Recipe Description</label>
-			</div>
-		</div>
-		<div class="row">
-			<div class="switch">
-				<label>
-                    <input id="gluten_free" name="gluten_free" type="checkbox">
-                    <span class="lever"></span>
-                    Gluten FREE
-                </label>
-			</div>
-		</div>
-		<div class="row">
-			<button class="btn waves-effect waves-light" type="submit" name="action">Add Recipe
-                <i class="material-icons right">add</i>
-            </button>
-		</div>
-
-
-	</form>
+<div class="container">
+    <!---------------main title----------------------->
+    <div>
+        <h3 class="centertxt">Add Recipe</h3>
+    </div>
+    <hr>
+    <!--------------recip content--------------------->
+    <div class="row">
+        <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
+            <div class="row">
+            <!--------------recip category----------------------->
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">label_outline</i>
+                    <select id="category" name="category_name">
+                            <option value="" disabled selected>select category</option>
+                                {% for cat in categories %}
+                            <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                                {% endfor %}
+                        </select>
+                    <label>recipe category</label>
+                </div>
+            </div>
+            <!--------------recip name----------------------->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">assignment</i>
+                    <input id="recipe_name" name="recipe_name" type="text" class="validate" required
+        minlength="4" maxlength="45">
+                    <label for="icon_prefix">recipe name</label>
+                </div>
+            </div>
+            <!--------------recipe description----------------------->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">subject</i>
+                    <textarea   id="recipe_description" name="recipe_description" type="textarea" class="materialize-textarea" required
+        minlength="20" ></textarea>
+                    <label for="icon_telephone">recipe description</label>
+                </div>
+            </div>
+            <!--------------recip ingredients----------------------->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">kitchen</i>
+                    <textarea   id="recip_ingredients" name="recip_ingredients" type="textarea" class="materialize-textarea" required
+        minlength="20" ></textarea>
+                    <label for="icon_telephone">recip ingredients</label>
+                </div>
+            </div>
+            <!--------------recipe method----------------------->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">restaurant_menu</i>
+                    <textarea   id="recipe_method" name="recipe_method" type="textarea" class="materialize-textarea" required
+        minlength="20" ></textarea>
+                    <label for="icon_telephone">Method</label>
+                </div>
+            </div>
+            <!--------------recipe image----------------------->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">image</i>
+                    <textarea   id="recipe_image" name="recipe_image" type="textarea" class="materialize-textarea"></textarea>
+                    <label for="icon_telephone">paste your image link here</label>
+                </div>
+                <div class="upload-text">
+                    <i class="material-icons">lightbulb_outline</i>How to upload an image
+                    <ol>
+                        <li>We recomend using <a class="more-btn" href="https://imgbb.com/" class="more-btn" target="_blank">inbb</a> service.</li>
+                        <li>Create the free acount by clicking on blue button on the top-right corner of the home page</li>
+                        <li>Add picture of your meal by clinking upload button (  <i class="material-icons prefix" style="font-size: 14px;">cloud_upload</i>  )</li>
+                        <li>Now use <b>Embed codes</b> drop down menu and select "Direct links"</li>
+                        <li>Copy and paste newly created link above</li>
+                    </ol>
+                </div>
+            </div>
+            <!--------------recipe gluten free----------------------->
+            <div class="row">
+                <div class="switch col s12">
+                    <label>
+                            <input id="gluten_free" name="gluten_free" type="checkbox">
+                            <span class="lever"></span>gluten free
+                        </label>
+                </div>
+            </div>
+            <!--------------recipe button add----------------------->
+            <div class="row">
+                <div class="button_cont">
+                    <button class="button_d" type="submit" name="action"> ADD <i class="material-icons right">playlist_add</i></button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
-
 {% endblock %}
