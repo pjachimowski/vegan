@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(to bottom right, #2e2e2e, #161616);
+    background-image: linear-gradient(to bottom right, #444444, #161616);
     color: #e4e4e4;
 }
 
@@ -16,6 +16,14 @@ hr {
 }
 
 /*---   navbar -------------------------*/
+
+.nav-btn {
+    color: #e4e4e4;
+}
+
+.nav-btn:hover {
+    color: #00eea7 !important;
+}
 
 .navbar {
     height: 70px;
