@@ -1,0 +1,31 @@
+{% for recipe in recipes %}
+
+<h3> Breakfast </h3>
+{% if '{{recipe.category_name}}' == 'breakfast' %}
+<ul>
+<li>
+{{recipe.recipe_name}} 
+{{recipe.recipe_description}}
+</li>
+</ul>
+
+<h3> Lunch </h3>
+{% elif '{{recipe.category_name}}' == 'lunch' %}
+<ul>
+<li>
+{{recipe.recipe_name}} 
+{{recipe.recipe_description}}
+</li>
+</ul>
+
+<h3> Dinner </h3>
+{% else %}
+<ul>
+<li>
+{{recipe.recipe_name}} 
+{{recipe.recipe_description}}
+</li>
+</ul>
+
+{% endif %}
+{% endfor %}
