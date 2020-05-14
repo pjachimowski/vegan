@@ -1,26 +1,21 @@
-.btn-small {
-    height: 24px;
-    width: 160px;
-    line-height: 24px;
-    margin: 5px 5px;
-    padding: 0 0.5em;
+body {
+    background: #7a7a7a;
+}
+    
+hr { 
+  height: 1px;
+  width: 70%;
+  color: #00eea7;
+  background-color: #00eea7;
+  border-color: #00eea7;
 }
 
-.task-header {
-    margin-top: 5px;
-}
 
-a.card-btn {
-    color: rgb(0, 0, 0) !important;
-}
-
-a {
-    color: rgb(255, 255, 255) !important;
-}
+/*---   navbar -------------------------*/
 
 .navbar {
     height: 70px;
-    background-color: green;
+    background:  #1a1a1a;
 }
 
 .logo {
@@ -32,3 +27,77 @@ a {
     width: 90px;
     margin: 10px;
 }
+
+/*---  intro panel ---------------------*/
+
+
+h3.centertxt {
+    font-family: 'Merienda', cursive;
+    text-align: center;
+    margin: 60px;
+}
+
+.intro-panel {
+    background-image: url("/static/css/jumbotrone_bg.jpg");
+    text-align: center;
+    color: #e4e4e4;
+    height: 100%;
+    padding: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top:    1px solid  #00eea7;
+    border-right:  0px solid black;
+    border-bottom: 3px solid #00eea7;
+    border-left:   0px solid  black;
+}
+
+.intro-logo {
+    background: url("/static/css/vegan_day.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    width: 450px;
+    margin: 100px;
+}
+
+/* ----- intro button --------*/
+
+.button_d {
+    color: #00eea7  !important;
+    text-transform: uppercase;
+    padding: 20px;
+    border: 2px solid #00eea7 !important;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    margin: 40px;
+}
+
+.button_d:hover {
+    color: #008f99   !important;
+    border-radius: 50px;
+    border-color: #008f99  !important;
+    transition: all 0.3s ease 0s;
+}
+
+/*---  home page accordion ---------------------*/
+.task-header {
+    margin-top: 5px;
+}
+
+.btn-small {
+    height: 24px;
+    width: 160px;
+    line-height: 24px;
+    margin: 5px 5px;
+    padding: 0 0.5em;
+}
+
+a.card-btn {
+    color: rgb(0, 0, 0) !important;
+}
+
+
+
