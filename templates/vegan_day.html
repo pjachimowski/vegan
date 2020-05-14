@@ -17,9 +17,42 @@
     <div class="button_cont" align="center"><a class="button_d" href="add-website-here" target="_blank" rel="nofollow noopener">Inspire me</a></div>
   </div>
 </div>
-
-  <div class="intro-logo"></div>
-  <ul class="collapsible popout" data-collapsable="accordion">
+<div class="row">
+      <div class="col s6 how-to">
+        <p>Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda perferendis veritatis quod inventore, quia dolorem totam incidunt nihil aliquid quidem possimus id similique aspernatur nisi. </p>
+      </div>
+      <div class="col s6">
+        <div class="intro-logo"></div>
+      </div>
+</div>
+<hr>
+<div class="row">
+<div class="col s4">
+<ul class="collapsible popout" data-collapsable="accordion">
+    {% for recipe in recipes %}
+    <li>
+      <div class="collapsible-header">
+          <i class="material-icons">expand_more</i>
+          <div class="inline-actions">
+            <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
+              class="waves-effect waves-light btn btn-small">DELETE</a>
+            <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
+              class="waves-effect waves-light btn btn-small blue">EDIT</a>
+          </div>
+        </div>
+          <strong>{{recipe.recipe_name}}</strong>
+      <div class="collapsible-body">
+        <span>
+          {{recipe.category_name}} {{recipe.recipe_description}}
+          {{recipe.gluten_free}} {{recipe.due_date}}
+        </span>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="col s4">
+<ul class="collapsible popout" data-collapsable="accordion">
     {% for recipe in recipes %}
     <li>
       <div class="collapsible-header">
@@ -53,6 +86,47 @@
     </li>
     {% endfor %}
   </ul>
+</div>
+<div class="col s4">
+<ul class="collapsible popout" data-collapsable="accordion">
+    {% for recipe in recipes %}
+    <li>
+      <div class="collapsible-header">
+        <div class="col s1">
+          <i class="material-icons">expand_more</i>
+        </div>
+        <div class="col s2">
+          <div class="inline-actions">
+            <a
+              href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
+              class="waves-effect waves-light btn btn-small"
+              >DELETE</a
+            >
+            <a
+              href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
+              class="waves-effect waves-light btn btn-small blue"
+              >EDIT</a
+            >
+          </div>
+        </div>
+        <div class="task-header col s9">
+          <strong>{{recipe.recipe_name}}</strong>
+        </div>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          {{recipe.category_name}} {{recipe.recipe_description}}
+          {{recipe.gluten_free}} {{recipe.due_date}}
+        </span>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+</div>
+
+  
+  
 
   {% endblock %}
 </div>
