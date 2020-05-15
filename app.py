@@ -13,8 +13,13 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_vegan_day')
 def get_vegan_day():
-    return render_template("vegan_day.html", 
-                           recipes=mongo.db.recipes.find())
+    brecipes=mongo.db.recipes.find()
+    lrecipes=mongo.db.recipes.find()
+    drecipes=mongo.db.recipes.find()
+    print(brecipes)
+    print(lrecipes)
+    print(drecipes)
+    return render_template("vegan_day.html", brecipes=brecipes, lrecipes=lrecipes, drecipes=drecipes)
 
 
 @app.route('/add_recipe')
@@ -38,6 +43,14 @@ def full_recipe(recipe_id):
                            categories=all_categories)
 
 
+@app.route('/random_recipe/<recipe_id>')
+def random_recipe(recipe_id):
+    the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    all_categories =  mongo.db.categories.find()
+    return render_template('random_recipe.html', recipe=the_recipe,
+                           categories=all_categories)
+
+
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -58,7 +71,7 @@ def update_recipe(recipe_id):
         'recipe_ingredients': request.form.get('recipe_ingredients'),
         'recipe_method': request.form.get('recipe_method'),
         'recipe_image': request.form.get('recipe_image'),
-        'gluten_free':request.form.get('gluten_free'),
+        'gluten_free': request.form.get('gluten_free'),
     })
     return redirect(url_for('get_vegan_day'))
 

@@ -30,12 +30,21 @@
                     <label for="icon_prefix">recipe name</label>
                 </div>
             </div>
+            <!--------------recipe short description----------------------->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">art_track</i>
+                    <textarea   id="recipe_short" name="recipe_short" type="textarea" class="materialize-textarea" required
+        minlength="20" maxlength="120" ></textarea>
+                    <label for="icon_telephone">recipe short description</label>
+                </div>
+            </div>
             <!--------------recipe description----------------------->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">subject</i>
                     <textarea   id="recipe_description" name="recipe_description" type="textarea" class="materialize-textarea" required
-        minlength="20" ></textarea>
+        minlength="20" maxlength="600"></textarea>
                     <label for="icon_telephone">recipe description</label>
                 </div>
             </div>

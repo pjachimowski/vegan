@@ -1,97 +1,60 @@
 {% extends 'base.html' %} {% block content %}
+
+<!---------------main title----------------------->
+<div class="full-recipe-panel" style="background: url('{{recipe.recipe_image}}');
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    background-size: cover;">
+</div>
+<!--------------recip content--------------------->
 <div class="container">
-  <!---------------main title----------------------->
-  <div>
-    <h3 class="centertxt">{{recipe.recipe_name}}</h3>
-  </div>
-  <hr />
-  <!--------------recip content--------------------->
-  <div class="row">
-        <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
-            <div class="row">
-                <!--------------recip category----------------------->
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">label_outline</i>
-                    <select id="category" name="category_name">
-                        <option value="" disabled selected>Choose Category</option>
-                            {% for cat in categories %} {% if cat.category_name == recipe.category_name %}
-                        <option value="{{cat.category_name}}" selected>{{cat.category_name}}</option>
-                            {% else %}
-                        <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                            {% endif %} {% endfor %}
-                    </select>
-                    <label>recipe category</label>
-                </div>
+    <div>
+        <h2 class="centertxt">{{recipe.recipe_name}}</h2>
+        <p class="full-recipe-subtitle">for today's {{recipe.category_name}}</p>
+    </div>
+    <div class="row">
+        <div action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12 full-recipe-description font-light">
+        <!--maybe I should delete unnecessary action atribute -->
+        {{recipe.recipe_short}}
+        </div>
+    </div>
+    <hr>
+    <!--------------recip ingredients----------------------->
+    <div class="row">
+        <div class="col s12 m5">
+            <div class="frame-text">
+                <i class="material-icons prefix">kitchen</i> Shopping list
+                <p>{{recipe.recip_ingredients}}</p>
             </div>
-            <!--------------recip name----------------------->
-            <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">assignment</i>
-                <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}"/>
-                <label for="icon_prefix">Recipe Name</label>
-            </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">subject</i>
-                    <textarea name="recipe_description" id="recipe_description" class="materialize-textarea">{{recipe.recipe_description}}</textarea>
-                    <label for="icon_telephone">Recipe Description</label>
-                </div>
-            </div>
-            <!--------------recip ingredients----------------------->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">kitchen</i>
-                        <textarea id="recip_ingredients" name="recip_ingredients" type="textarea" class="materialize-textarea" required minlength="20">{{recipe.recip_ingredients}}</textarea>
-                        <label for="icon_telephone">recip ingredients</label>
-                </div>
-            </div>
-            <!--------------recipe method----------------------->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">restaurant_menu</i>
-                        <textarea id="recipe_method" name="recipe_method" type="textarea" class="materialize-textarea" required minlength="20">{{recipe.recipe_method}}</textarea>
-                        <label for="icon_telephone">Method</label>
-                </div>
-            </div>
-            <!--------------recipe image----------------------->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">image</i>
-                        <textarea   id="recipe_image" name="recipe_image" type="textarea" class="materialize-textarea">{{recipe.recipe_image}}</textarea>
-                    <label for="icon_telephone">paste your image link here</label>
-                </div>
-                <div class="upload-text">
-                    <i class="material-icons">lightbulb_outline</i>How to upload an image
-                        <ol>
-                            <li>We recomend using <a class="more-btn" href="https://imgbb.com/" class="more-btn" target="_blank">inbb</a> service.</li>
-                            <li>Create the free acount by clicking on blue button on the top-right corner of the home page</li>
-                            <li>Add picture of your meal by clinking upload button (  <i class="material-icons prefix" style="font-size: 14px;">cloud_upload</i>  )</li>
-                            <li>Now use <b>Embed codes</b> drop down menu and select "Direct links"</li>
-                            <li>Copy and paste newly created link above</li>
-                        </ol>
-                </div>
-            </div>
-            <!--------------recipe gluten free----------------------->
-            <div class="row">
-                <div class="switch">
-                    <label>
-                    {% if recipe.gluten_free %}
-                    <input id="gluten_free" name="gluten_free" type="checkbox" checked />
-                    {% else %}
-                    <input id="gluten_free" name="gluten_free" type="checkbox" />
-                    {% endif %}
-                    <span class="lever"></span>
-                    Gluten FREE
-                    </label>
-                </div>
-            </div>
-            <div class="row">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Edit
-                <i class="material-icons right">edit</i>
-                </button>
-            </div>
-        </form>
+        </div>
+        <div class="more-about col s12 m7">
+            <h5 class="font-bold"> More about </h5>
+            <p class="font-light">{{recipe.recipe_description}} </p>
+            <p class="font-green">Gluten free:
+                {% if recipe.gluten_free %}
+                <i class="material-icons">check</i>
+                {% else %}
+                <i class="material-icons">close</i>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    <!--------------recipe method----------------------->
+    <div class="row">
+        <div class="col s12">
+            <h5 class="font-bold"><i class="material-icons prefix">restaurant_menu</i>
+            Let's get into it
+            </h5>
+            <p class="font-light">{{recipe.recipe_method}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 inline-actions align-right">
+            <a class="btn-1" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"> 
+            <i class="material-icons prefix">edit</i></a>
+            <a class="btn-1" href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">
+            <i class="material-icons prefix">delete</i></a>
+        </div>
     </div>
 </div>
 {% endblock %}

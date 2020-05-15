@@ -1,6 +1,7 @@
 body {
     background-image: linear-gradient(to bottom right, #444444, #161616);
     color: #e4e4e4;
+    font-family: 'Roboto', sans-serif;
 }
 
 hr { 
@@ -15,6 +16,26 @@ hr {
     color: #2e2e2e;
 }
 
+.font-green {
+    color: #00eea7;
+}
+
+.font-light { 
+    font-weight: 100;
+}
+
+.font-bold { 
+    font-weight: 700;
+}
+
+.centertxt {
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Merienda', 'Courier New', Courier, monospace;
+}
+
 /*---   navbar -------------------------*/
 
 .nav-btn {
@@ -22,11 +43,12 @@ hr {
 }
 
 .nav-btn:hover {
-    color: #00eea7 !important;
+    color: #00eea7 ;
 }
 
 .navbar {
-    height: 70px;
+    padding: 5px 20px 5px 20px;
+    height: 80px;
     background:  #2e2e2e;
 }
 
@@ -42,10 +64,8 @@ hr {
 
 /*---  intro panel ---------------------*/
 
-
-h3.centertxt {
-    font-family: 'Merienda', cursive;
-    text-align: center;
+h1 {
+    font-family: 'Merienda', 'Courier New', Courier, monospace;
     margin: 60px;
 }
 
@@ -104,6 +124,9 @@ h3.centertxt {
 
 /*---  home page accordion ---------------------*/
 
+h2 {
+    font-family: 'Merienda', 'Courier New', Courier, monospace;
+}
 
 .collapsible-header {
     margin-top: 0px;
@@ -111,34 +134,38 @@ h3.centertxt {
     height: 100px;
 }
 
-.btn-small {
-    height: 24px;
-    width: 160px;
-    line-height: 24px;
-    margin: 5px 5px;
-    padding: 0 0.5em;
+.align-right {
+    text-align: right;
 }
 
-a.card-btn {
-    color: rgb(0, 0, 0) !important;
+.btn-1 {
+    color: #00eea7;
+    text-transform: uppercase;
+    margin: 5px;
+}
+
+.btn-1:hover {
+    color: #e4e4e4;
 }
 
 /*--- founder quote ------------*/
 
+h4 {
+    font-family: 'Merienda';
+    text-align: center;
+    margin: 20px 0px 10px 0px;
+}
+
 .blockquote {
     font-style: italic;
-    font-family: "sans-serif";
     color: #e4e4e4;
-    font-size: 90%;
 }
 
 .founder {
-    font-family: "sans-serif";
-    color: #797979;
+    margin-bottom: 60px;
+    color: #00eea7;
     font-size: 90%;
 }
-
-
 
 /*----- Add Recipe -------------*/
 
@@ -149,6 +176,48 @@ a.card-btn {
     font-size: x-small;
 }
 
+/*----- full recipe panel --------*/
+
+h5 {
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.full-recipe-panel {
+    text-align: center;
+    color: #e4e4e4;
+    padding: 40px;
+    height: 220px;
+    border-top:    1px solid  #00eea7;
+    border-right:  0px solid black;
+    border-bottom: 3px solid #00eea7;
+    border-left:   0px solid  black;
+}
+
+.full-recipe-subtitle {
+    font-family: 'Merienda', cursive;
+    text-align: center;
+    font-size: small;
+}
+
+.full-recipe-description {
+    text-align: center;
+    margin: 25px 0px;
+}
+
+.frame-text {
+    padding: 25px;
+    border:  1px solid #00eea7;
+    border-radius: 5px;
+    margin-top: 25px;
+    background-image: linear-gradient(to bottom right, #444444, #161616);
+}
+
+.more-about{
+    margin-top: 25px;
+    padding: 25px;
+}
+
 /*------- footer ---------------*/
 
 .footer {
@@ -157,6 +226,7 @@ a.card-btn {
     background-repeat: no-repeat;
     background-size: cover;
     border-top: 1px solid  #00eea7;
+    margin-top: 45px;
 }
 
 .footer-copyright {
