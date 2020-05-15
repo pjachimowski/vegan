@@ -22,13 +22,13 @@
     <!--------------recip ingredients----------------------->
     <div class="row">
         <div class="col s12 m5">
-            <div class="frame-text">
-                <i class="material-icons prefix">kitchen</i> Shopping list
-                <p>{{recipe.recip_ingredients}}</p>
+            <div class="frame-text font-light">
+                <i class="material-icons prefix">kitchen</i> <strong> Shopping list</strong>
+                <p>{{recipe.recipe_ingredients}}</p>
             </div>
         </div>
         <div class="more-about col s12 m7">
-            <h5 class="font-bold"> More about </h5>
+            <h5 class="font-bold"> More about {{recipe.recipe_name}} </h5>
             <p class="font-light">{{recipe.recipe_description}} </p>
             <p class="font-green">Gluten free:
                 {% if recipe.gluten_free %}
