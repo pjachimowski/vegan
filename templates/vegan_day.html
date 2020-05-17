@@ -4,63 +4,53 @@
         <h1 class="centertxt">My Vegan Day</h1>
         <div class="centertxt">
             <p>
-                Our app is a collaboration for everyone who wants to turn his daily menu
-                more green, healthy and interesting. For big meat lovers it's a great
-                chance to try new, equally satisfying dishes, for vegetarians it's an
-                eye-opener for even greener possibilities. It's a great place to scroll
-                through many ideas which will influence your kitchen, make your belly
-                happy and above all else - save you time and effort. Our goal is to
-                connect people who are interested in vegan diet, build the collection of
-                recipes and get inspired by others. Join and discover new flavors.
+                This blog is my personal collection of recipes that build my daily vegan diet. I always wanted to turn my day more green, healthy and interesting. It's a great place where I often visit to scroll
+                through many ideas which influence my kitchen daily, make your belly
+                happy and above all else - save my time and effort. I divided all the meals to three categories: breakfast, lunch and dinner. Like that I can have 3 regular satisfying dishes a day and I don't have to search the internet or look into my cook books. Everything I need is always here.
             </p>
         </div>
         <div class="button_cont">
-            <a class="button_d" href="add-website-here"  rel="nofollow noopener">repeat</a>
+            <a class="button_d" href="{{url_for('add_recipe')}}"  rel="nofollow noopener">Add recipe</a>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col s12 l6">
-        <div class="how-to">
-            <p>
-                Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Assumenda perferendis veritatis quod inventore, quia dolorem totam
-                incidunt nihil aliquid quidem possimus id similique aspernatur nisi.
-            </p>
+        <div class="about ">
+            <p class="font-light">
+                Morning hustle doesn't leave me time to search for meal recipes. At work I always need something fresh and full of nutritions. When the day is over I am ready for something satysfying, healthy and new. On top of that I recently become vagan so I need a place where I would store my daily inspirations for vegan meals. These are the reasons why I created my Vegan Day: 
+            </p><br>
+                <p class="font-bold">
+                    <i class="fas fa-apple-alt"></i>   Fresh Breakfast
+                    <br>
+                    <i class="fas fa-carrot"></i>   Energising Lunch
+                    <br>
+                    <i class="fas fa-utensils"></i>     Satysfying Dinner
+                    <br>
+                </p>
         </div>
     </div>
     <div class="col s12 l6">
-        <div class="how-to">
-            <div class="how-to-logo"></div>
+        <div class="about">
+            <div class="about-logo"></div>
         </div>
     </div>
 </div>
 <hr>
 <div class="row">
-    <div class="col s4">
-        <h2 class="centertxt">Breakfast</h2>
-    </div>
-    <div class="col s4">
-        <h2 class="centertxt">Lunch</h2>
-    </div>
-    <div class="col s4">
-        <h2 class="centertxt">Dinner</h2>
-    </div>
-</div>
-<div class="row">
-
-
-    <div class="col s4">
+    <div class="col s12 l4">
+        <div>
+            <h2 class="centertxt">Breakfast</h2>
+        </div>
         <ul class="collapsible popout" data-collapsable="accordion">
         {% for brecipe in brecipes %}
         {% if brecipe.category_name == 'breakfast' %}
             <li>
-                <div class="collapsible-header font-dark" style="
+                <div class="collapsible-header" style="
                                                             background: url('{{brecipe.recipe_image}}');
                                                             background-position: center;
                                                             background-repeat: no-repeat;
                                                             background-size: cover;">
-                    <i class="material-icons">expand_more</i>
                 </div>
                 <div class="collapsible-body">
                     <p class="font-bold">{{brecipe.recipe_name}}</p>
@@ -79,17 +69,20 @@
     </div>
 
 
-    <div class="col s4">
+    <div class="col s12 l4">
+        <div>
+            <h2 class="centertxt">Lunch</h2>
+        </div>
         <ul class="collapsible popout" data-collapsable="accordion">
         {% for lrecipe in lrecipes %}
         {% if lrecipe.category_name == 'lunch' %}
             <li>
-                <div class="collapsible-header font-dark" style="
+                <div class="collapsible-header" style="
                                                             background: url('{{lrecipe.recipe_image}}');
                                                             background-position: center;
                                                             background-repeat: no-repeat;
                                                             background-size: cover;">
-                    <i class="material-icons">expand_more</i>
+
                 </div>
                 <div class="collapsible-body">
                     <p class="font-bold">{{lrecipe.recipe_name}}</p>
@@ -108,17 +101,19 @@
     </div>
 
 
-    <div class="col s4">
+    <div class="col s12 l4">
+        <div>
+            <h2 class="centertxt">Dinner</h2>
+        </div>
         <ul class="collapsible popout" data-collapsable="accordion">
         {% for drecipe in drecipes %}
         {% if drecipe.category_name == 'dinner' %}
             <li>
-                <div class="collapsible-header font-dark" style="
+                <div class="collapsible-header" style="
                                                             background: url('{{drecipe.recipe_image}}');
                                                             background-position: center;
                                                             background-repeat: no-repeat;
                                                             background-size: cover;">
-                    <i class="material-icons">expand_more</i>
                 </div>
                 <div class="collapsible-body">
                     <p class="font-bold">{{drecipe.recipe_name}}</p>
@@ -137,20 +132,6 @@
     </div>
 
 
-</div>
-
-<div class="row">
-    <div class="col s12">
-        <div class="centertxt">
-            <div class="d-block d-sm-block">
-                <img src="/static/css/pj.jpg" height="100" width="100" alt="founder" />
-            </div>
-            <p class="blockquote">
-                "Place where I always find inspiration for my delicious vegan food"
-            </p>
-            <p class="founder">- Patryk Jachimowski, Vegan Inspired Founder</p>
-        </div>
-    </div>
 </div>
 
 {% endblock %}

@@ -20,6 +20,10 @@ hr {
     color: #00eea7;
 }
 
+.font-white {
+    color: #e4e4e4;
+}
+
 .font-light { 
     font-weight: 100;
 }
@@ -34,6 +38,14 @@ hr {
 
 h3 {
     font-family: 'Merienda', 'Courier New', Courier, monospace;
+}
+
+.btn-2 {
+    color: #e4e4e4;
+}
+
+.btn-2:hover {
+    color: #00eea7;
 }
 
 /*---   navbar -------------------------*/
@@ -54,6 +66,16 @@ h3 {
 
 .logo {
     background: url("/static/css/vegan_day.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 90px;
+    margin: 10px;
+}
+
+.logo:hover {
+    background: url("/static/css/vegan_day_green.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -88,6 +110,7 @@ h1 {
 
 .button_d {
     color: #00eea7  !important;
+    background: none;
     text-transform: uppercase;
     padding: 20px;
     border: 2px solid #00eea7 !important;
@@ -104,15 +127,15 @@ h1 {
     transition: all 0.3s ease 0s;
 }
 
-/* --- how-to panel ----------------------------*/
+/* --- about panel ----------------------------*/
 
-.how-to {
+.about {
     text-align: center;
     margin: 120px 20px 120px 50px;
     align-content: center;
 }
 
-.how-to-logo {
+.about-logo {
     background: url("/static/css/vegan_day_green.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -134,12 +157,18 @@ h2 {
     height: 100px;
 }
 
+.collapsible-header:hover {
+    border: 2px solid #00eea7;
+}
+
 .align-right {
     text-align: right;
 }
 
 .btn-1 {
     color: #00eea7;
+    background: none;
+    border: none;
     text-transform: uppercase;
     margin: 5px;
 }
@@ -206,11 +235,14 @@ h5 {
 }
 
 .frame-text {
+    background: url("/static/css/dark_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 25px;
     border:  1px solid #00eea7;
     border-radius: 5px;
     margin-top: 25px;
-    background-image: linear-gradient(to bottom right, #444444, #161616);
 }
 
 .more-about{
@@ -226,7 +258,7 @@ h5 {
     background-repeat: no-repeat;
     background-size: cover;
     border-top: 1px solid  #00eea7;
-    margin-top: 45px;
+    margin-top: 75px;
 }
 
 .footer-copyright {
