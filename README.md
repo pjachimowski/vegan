@@ -1,49 +1,41 @@
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com//pjachimowski/stickers)
-# PJ - Stickers
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://https://github.com/pjachimowski/vegan)
+
+# Vegan Day
 ...........................................................................................
-PJ - Stickers in an e-commerce website selling eco - friendly stickers. 
-It provides sets of ready stickers to purchase as well as form to request a custom design.
-
-Products are eco-friendly, inspiring fun and smart stickers! High quality print, free delivery in Amsterdam area and more. 
-
-User can register to Partal, creating profile. 
+Vegan day is a cooking blog / app where the user can create, read, edit and delete vegan recipes. Recipes are sorted out by categories: breakfast, lunch and dinner. It this was the user can select his vegan day inspirations. 
 
 # UX Write up
 ...........................................................................................
 ## color scheme
 - Main body uses generated css gradient (via https://www.ccbg.io/)
-PURPLE, PINK, NAVY
-There colors are meant to create positive, fun, and modern look (a reminder of other visual apps like instagram) 
+Dark gray, black and bright green are the colors I chose to create very modern and appealing look.
+Most of the text is in very light gray in order to improve readability. 
+I did not want to use 100% white or 100% black. 
+Main colors used:
+white: #e4e4e4; black: #2e2e2e; green: #00eea7;
 
-- Main buttons and call to action buttons:
-Used as a contrast to purple background. Eye - catcher. 
-ORANGE rgb(255, 166, 0);
+- Main buttons and call-to-action buttons:
+Used as a contrast to dark background. Eye - catcher. 
+green: #00eea7;
+
+Background picture for home page as well as footer and shopping list background were darkened for better contrasting with the font. 
 
 ## typography
 - Main titles and titles on the product cards:
-font-family: 'Sriracha'
+font-family: 'Merienda'
 - Rest:
-font-family: 'Ubuntu'
+font-family: 'Roboto'
 
 ## USER STORIES
 ### Epic:
-As a user, I want to purchase eco-friendly stickers 
+As a user, I want to create, read, edit and delete vegan recipes.
 ### Detailed:
-As a private person (resident of Amsterdam), I want to purchase already created eco stickers so that I can use them as an inspiration at my party/ wrap my gifts/ promote my ideas and be sure that I am helping the environment. 
-Ensure enough inspirational stickers for any occasion
-- Promote sustainability on each sticker
-- Create a promo code for first purchase
-- Create company/ private user field within account setup 
-- Promote free delivery within Amsterdam borders
-
-As a new business owner, I want to purchase custom made eco stickers so that I can promote my company/ run the campaign and use sustainability as a promotional factor creating a positive image of the newly created brand. 
-- Create friendly request form 
-- Promote sustainability on each sticker
-
-As a company, I want to purchase a design of eco stickers so that I can advertise in the fairs/ increase my audience via branding/ have it for internal use and in any case promote sustainability which aligns with the vision of my company. 
-- Create company/ private user field within account setup 
-- Promote sustainability on each sticker
-- Create discounts on larger purchases 
+As a private person who's goal is to keep a daily diet vegan, this app serves as a list of recipes, sorted in 3 categories: breakfast, lunch and dinner.
+The websites functionality benefits user with:
+- Easy preview of the recipes
+- Posibility to edit if necessary
+- If user is no longer intersted in recipe there is a possibility to delete it
+- Author can connect with others via social medialinks
 
 ## WIREFRAMES
 An early stage draft of the app. Changes appied. 
@@ -67,74 +59,46 @@ An early stage draft of the app. Changes appied.
 # FEATURES
 ...........................................................................................
 ### Navbar 
-Navbar is responsive and in mobile version is isplayed as toggle drop down menu. Light transparency provides extra styling and keeps elements visable at all times. 
-(elements of the navbar are repeated in the footer element as well as on the home page for better user experience)
+Navbar is responsive and in mobile version it is displayed as toggle drop down menu.
+(elements of the navbar are repeated in the home page panel as weel as in the footer as a logo leading to home page. 
 - Logo at the top left corner (self designed)
 -a link to home page
-- Shop btn
--a link to shop page
-- Request btn
--a link to request page
-- Register btn
--a link to shop page
-- Login btn
--a link to login page
-- shopping cart btn
--a link to shoping cart page (featured in extra badge which (if any) displays the amount of items in the basket). Works as a purchase preview as well as payment link. 
+- Add recipe btn
+-a link to add recipe page 
+
 
 ### Homepage 
-- Teaser Page. Iconic zebra sticker (featured multiple times) on the left and teaser text with call to action button on the right. 
-- Usability explained with additional call to actions buttons as a repetition and explanation of navbar features. 
-- Selling points. 3 icons representing best selling points of the e-commerce webpage. 
-- Quotes. The reviews from previous users and star representing points. User can leave the review under the profile tab. 
+- Teaser Page. Brief introduction to the purpose of the website.
+- Call-to-action button for adding a new recipe.
+- More information ad introduction to the 3 categories.
+- All recipes listed as 3 unordered list grouped by categories: breakfast, lunch and dinner. Every recipe is presented as a collapsible element of unordered list inside of an accordion. To get to the main recipe user can click on picture of the selected recipe and see short description. Then later "MORE" button will lead to the separate page of the full recipe description.
+- Footer
 
-### Shop 
-- All the products listed in the set of card display.
-- Shop page is featured with the search button which allow user to search among products using key words. 
-- Each card in the deck features: image of the sticker, title, short description, price and add to the card functionality. After typing the number (max 999) in the input form user will be notyfied of existing items in the cart with orange notyfication badge in the top right corner
+### Add recipe page
+- A form page to create new recipe. Form fields are: 
+> Select category
+> Recipe name
+> Short description
+> More about this recipe
+> Ingredients
+> Method
+> Add image 
+> Gluten free 
 
-### Request 
-- A form allowing user to request a custom made sticker. Form is sent to the Website owner by Email JS.
-- Request button at the bottom of the page (ORANGE color used as call to action). 
-* All the form's fields are required (exept of promo code). Form validation has been used. 
-
-### Register / Profile
-- If user is already logged in "REGISTER" option will not appear in the navbar. 
-Registration works as creating new account. 
-After registering as a  new user, customer will recive an alert with the promo code. 
-To finish registration successfully user has to fill in the username form, email address, password and password confirmation. 
-- Profile page (displayed only when user is logged in) has a welcome message from the owner of the page. Here User can see "Welcome ${user name} message customized with his/her own name. Under the profile user can send a review. 
-- in the future user will be able to see also purchase history here. 
-- Register button at the bottom (ORANGE color used as call to action)
-* All the form's fields are required (exept of promo code). Form validation has been used. 
-
-### Log in / Log out 
-Here user can log in using username or email and password. 
-Under the log in form user can see "Forgot my password" link. This functionality will allow user to send reset password for to his/ her email address. 
-When user is already legged in then here he/she will see the log out button. 
-* All the form's fields are required (exept of promo code). Form validation has been used. 
-- Log in button at the button (ORANGE color used as call to action)
-
-### Cart
-- User has to be logged in to perform transaction.
-- If the shopping cart is empty then "Check out" button will change to "Cart is Empty". 
-- User can preview items previously added to the cart.
-- Total cost of the transaction is displayed in the frame below. 
-- User can edit the amount and confirm the change by clicking "Amend" button. 
-- Iconic zebra sticker at the button. 
-
-#### Check out 
-- Again, user can preview items previously added to the cart.
-- Total cost of the transaction is displayed in the frame on top. 
-- payment details. 
-- Submit payment button (ORANGE color used as call to action) at the button.
-- Payment page constructed and tested via Stripe payments technology. 
+### Edit recipe page
+- A form page to create new recipe. Form fields are: 
+> Select category
+> Recipe name
+> Short description
+> More about this recipe
+> Ingredients
+> Method
+> Add image 
+> Gluten free 
 
 ### Footer
 - Logo in different color scheme featured (clickable - leads to home page)
-- Short description of the service. 
-- QUICK LINKS. Minimalistic repetition of the navbar buttons. 
-- GET STARTED. Quick reminder about possibility of getting discount thanks to regirtration option. 
+- Quote from the author of the page. 
 - CONTACT. email provided as well as social media links. 
 - COPYRIGHT stripe
 
