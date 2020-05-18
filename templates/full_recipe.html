@@ -1,5 +1,4 @@
 {% extends 'base.html' %} {% block content %}
-
 <!---------------main title----------------------->
 <div class="full-recipe-panel" style="background: url('{{recipe.recipe_image}}');
                                     background-position: center;
@@ -14,7 +13,6 @@
     </div>
     <div class="row">
         <div action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12 full-recipe-description font-light">
-        <!--maybe I should delete unnecessary action atribute -->
         {{recipe.recipe_short}}
         </div>
     </div>
@@ -51,9 +49,11 @@
     <div class="row">
         <div class="col s12 inline-actions align-right">
             <a class="btn-1" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"> 
-            <i class="material-icons prefix">edit</i></a>
+                <i class="material-icons prefix">edit</i>
+            </a>
             <a class="btn-1" href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">
-            <i class="material-icons prefix">delete</i></a>
+                <i class="material-icons prefix">delete</i>
+            </a>
         </div>
     </div>
 </div>

@@ -8,16 +8,16 @@
     <!--------------recip content--------------------->
     <div class="row">
         <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
-            <div class="row">
             <!--------------recip category----------------------->
+            <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">label_outline</i>
                     <select id="category" name="category_name">
-                            <option value="" disabled selected>select category</option>
-                                {% for cat in categories %}
-                            <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                                {% endfor %}
-                        </select>
+                        <option disabled selected>select category</option>
+                            {% for cat in categories %}
+                        <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                            {% endfor %}
+                    </select>
                     <label>choose the meal type</label>
                 </div>
             </div>
@@ -25,60 +25,56 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">assignment</i>
-                    <input id="recipe_name" name="recipe_name" type="text" class="validate" required
-        minlength="4" maxlength="45">
-                    <label for="icon_prefix">recipe name</label>
+                    <input id="recipe_name" name="recipe_name" type="text" class="validate" required minlength="4" maxlength="45">
+                    <label for="recipe_name">recipe name</label>
                 </div>
             </div>
             <!--------------recipe short description----------------------->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">art_track</i>
-                    <textarea   id="recipe_short" name="recipe_short" type="textarea" class="materialize-textarea" required
-        minlength="20" maxlength="120" ></textarea>
-                    <label for="icon_telephone">short description</label>
+                    <textarea id="recipe_short" name="recipe_short" class="materialize-textarea" required minlength="20" maxlength="120" ></textarea>
+                    <label for="recipe_short">short description</label>
                 </div>
             </div>
             <!--------------recipe description----------------------->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">subject</i>
-                    <textarea   id="recipe_description" name="recipe_description" type="textarea" class="materialize-textarea" required
-        minlength="20" maxlength="600"></textarea>
-                    <label for="icon_telephone">more about this recipe</label>
+                    <textarea id="recipe_description" name="recipe_description" class="materialize-textarea" required minlength="20" maxlength="600"></textarea>
+                    <label for="recipe_description">more about this recipe</label>
                 </div>
             </div>
             <!--------------recipe ingredients----------------------->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">kitchen</i>
-                    <textarea   id="recipe_ingredients" name="recipe_ingredients" type="textarea" class="materialize-textarea" required minlength="20">
-                    </textarea>
-                    <label for="icon_telephone">ingredients</label>
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea" required minlength="20" maxlength="900"></textarea>
+                    <label for="recipe_ingredients">ingredients</label>
                 </div>
             </div>
             <!--------------recipe method----------------------->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">restaurant_menu</i>
-                    <textarea   id="recipe_method" name="recipe_method" type="textarea" class="materialize-textarea" required
-        minlength="20" ></textarea>
-                    <label for="icon_telephone">method</label>
+                    <textarea id="recipe_method" name="recipe_method" class="materialize-textarea" required minlength="20" maxlength="900"></textarea>
+                    <label for="recipe_method">method</label>
                 </div>
             </div>
             <!--------------recipe image----------------------->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">image</i>
-                    <textarea   id="recipe_image" name="recipe_image" type="textarea" class="materialize-textarea"></textarea>
-                    <label for="icon_telephone">paste your image link here</label>
+                    <textarea   id="recipe_image" name="recipe_image" 
+                    class="materialize-textarea"></textarea>
+                    <label for="recipe_image">paste your image link here</label>
                 </div>
                 <div class="upload-text">
                     <i class="material-icons">lightbulb_outline</i>How to upload an image
                     <ol>
                         <li>We recomend using <a class="more-btn" href="https://imgbb.com/" target="_blank">inbb</a> service.</li>
                         <li>Create the free acount by clicking on blue button on the top-right corner of the home page</li>
-                        <li>Add picture of your meal by clinking upload button (  <i class="material-icons prefix" style="font-size: 14px;">cloud_upload</i>  )</li>
+                        <li>Add picture of your meal by clinking upload button ( <i class="material-icons prefix" style="font-size: 14px;">cloud_upload</i>  )</li>
                         <li>Now use <b>Embed codes</b> drop down menu and select "Direct links"</li>
                         <li>Copy and paste newly created link above</li>
                     </ol>

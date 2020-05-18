@@ -1,100 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap"
-      rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Roboto:ital,wght@0,100;0,400;0,900;1,100&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='css/style.css')}}"
-      type="text/css"/>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"/>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"/>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
-      crossorigin="anonymous"/>
-    <title>Vegan Day</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="nav-wrapper">
-          <a href="{{url_for('get_vegan_day')}}" class="brand-logo my-auto logo"></a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse nav-btn"><i class="material-icons">menu</i></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a class="nav-btn" href="{{url_for('get_vegan_day')}}">Home</a></li>
-            <li><a class="nav-btn" href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><a class="card-btn nav-btn" href="{{url_for('get_vegan_day')}}">Home</a></li>
-            <li><a class="card-btn nav-btn" href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-          </ul>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Roboto:ital,wght@0,100;0,400;0,900;1,100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"/>
+        <title>Vegan Day</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="nav-wrapper">
+                    <a href="{{url_for('get_vegan_day')}}" class="brand-logo my-auto logo"></a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse nav-btn">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a class="nav-btn" href="{{url_for('get_vegan_day')}}">Home</a></li>
+                        <li><a class="nav-btn" href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a class="card-btn nav-btn" href="{{url_for('get_vegan_day')}}">Home</a></li>
+                        <li><a class="card-btn nav-btn" href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- content of different html files goes here  -->
+        {% block content %} {% endblock %}
+        <!-- footer -->
+        <div>
+            <footer class="page-footer footer">
+                <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                            <img src="/static/css/pj.jpg" height="80" width="80" alt="pjachimowski" />
+                        <p class="blockquote">
+                            "My daily inspiration for delicious vegan food"
+                        </p>
+                        <p class="founder">- Patryk Jachimowski</p>
+                            <a href="{{url_for('get_vegan_day')}}"><p class="brand-logo my-auto logo"></p></a>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>
+                        <a class="btn-2"  href="https://www.instagram.com/p.jachimowski89/" target="_blank"><i class="fab fa-instagram"></i> Follow me on Instagram</a>
+                        </li>
+                        <li>
+                        <a class="btn-2" 
+                            href="https://www.facebook.com/patryk.jachimowski.73/" target="_blank"><i class="fab fa-facebook-square"></i> Find me on facebook</a>
+                        </li>
+                        <li>
+                        <a class="btn-2" href="https://pj-stickers.herokuapp.com/" target="_blank"><i class="fas fa-store"></i> Check out my stickers store</a>
+                        </li>
+                        <li>
+                        <i class="far fa-envelope"></i>  p.jachimowski89@gmail.com
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container copyright">
+                    © 2020 Copyright, Patryk Jachimowski. Project created for academic purposes only. All Rights Reserved. <a class="btn-2 right" href="https://github.com/pjachimowski" target="_blank"><i class="fab fa-github"></i> my GitHub</a>
+                    </div>
+                </div>
+            </footer>
         </div>
-      </nav>
-    </header>
-
-    {% block content %} {% endblock %}
-
-    <div>
-      <footer class="page-footer footer">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-                    <img src="/static/css/pj.jpg" height="80" width="80" alt="pjachimowski" />
-                <p class="blockquote">
-                    "My daily inspiration for delicious vegan food"
-                </p>
-                <p class="founder">- Patryk Jachimowski</p>
-                    <a href="{{url_for('get_vegan_day')}}"><p class="brand-logo my-auto logo"></p></a>
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <h4>Contact</h4>
-              <ul>
-                <li>
-                  <a class="btn-2"  href="https://www.instagram.com/p.jachimowski89/" target="_blank"><i class="fab fa-instagram"></i> Follow me on Instagram</a>
-                </li>
-                <li>
-                  <a class="btn-2" 
-                    href="https://www.facebook.com/patryk.jachimowski.73/" target="_blank"><i class="fab fa-facebook-square"></i> Find me on facebook</a>
-                </li>
-                <li>
-                  <a class="btn-2" href="https://pj-stickers.herokuapp.com/" target="_blank"><i class="fas fa-store"></i> Check out my stickers store</a>
-                </li>
-                <li>
-                  <i class="far fa-envelope"></i>  p.jachimowski89@gmail.com
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="footer-copyright">
-				<div class="container copyright">
-					© 2020 Copyright, Patryk Jachimowski. Project created for academic purposes only. All Rights Reserved.
-					<a class="btn-2 right" href="https://github.com/pjachimowski" target="_blank"><i class="fab fa-github"></i> my GitHub</a>
-				</div>
-			</div>
-      </footer>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $(".collapsible").collapsible();
-        $("select").material_select();
-        $(".button-collapse").sideNav();
-      });
-    </script>
-  </body>
+        <!-- Script functionality  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $(".collapsible").collapsible();
+            $("select").material_select();
+            $(".button-collapse").sideNav();
+        });
+        </script>
+    </body>
 </html>

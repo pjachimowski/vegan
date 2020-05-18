@@ -1,26 +1,28 @@
 {% extends 'base.html' %} {% block content %}
+<!-------------- intro page / Teaser Page------------------------>
 <div class="intro-panel">
     <div class="container">
         <h1 class="centertxt">My Vegan Day</h1>
         <div class="centertxt">
-            <p>
-                This blog is my personal collection of recipes that build my daily vegan diet. I always wanted to turn my day more green, healthy and interesting. It's a great place where I often visit to scroll
-                through many ideas which influence my kitchen daily, make your belly
-                happy and above all else - save my time and effort. I divided all the meals to three categories: breakfast, lunch and dinner. Like that I can have 3 regular satisfying dishes a day and I don't have to search the internet or look into my cook books. Everything I need is always here.
-            </p>
+            <p>This blog is my personal collection of recipes that build my daily vegan diet. I always wanted to turn my day more green, healthy and interesting. It's a great place where I often visit to scroll
+            through many ideas which influence my kitchen daily, make your belly
+            happy and above all else - save my time and effort. I divided all the meals to three categories: breakfast, lunch and dinner. Like that I can have 3 regular satisfying dishes a day and I don't have to search the internet or look into my cook books. Everything I need is always here.</p>
         </div>
+        <!-- Call-to-action button for adding a new recipe -->
         <div class="button_cont">
             <a class="button_d" href="{{url_for('add_recipe')}}"  rel="nofollow noopener">Add recipe</a>
         </div>
     </div>
 </div>
+<!-- More information ad introduction to the 3 categories -->
 <div class="row">
-<div class="container">
-    <div class="col s12">
-        <div class="about">
-            <div class="font-light">
-                Morning hustle doesn't leave me time to search for meal recipes. At work I always need something fresh and full of nutritions. When the day is over I am ready for something satysfying, healthy and new. On top of that I recently become vagan so I need a place where I would store my daily inspirations for vegan meals. These are the reasons why I created my Vegan Day: 
-            </div><br>
+    <div class="container">
+        <div class="col s12">
+            <div class="about">
+                <div class="font-light">
+                    Morning hustle doesn't leave me time to search for meal recipes. At work I always need something fresh and full of nutritions. When the day is over I am ready for something satysfying, healthy and new. On top of that I recently become vagan so I need a place where I would store my daily inspirations for vegan meals. These are the reasons why I created my Vegan Day: 
+                </div>
+                <br>
                 <p class="font-bold">
                     <i class="fas fa-apple-alt"></i>   Fresh Breakfast
                     <br>
@@ -34,6 +36,8 @@
     </div>
 </div>
 <hr>
+<!-- All recipes listed as 3 unordered list grouped by categories: breakfast, lunch and dinner
+Here each recipe fells into a certain block unfer the condition checking which category this data belongs to -->
 <div class="row">
     <div class="col s12 l4">
         <div>
@@ -44,10 +48,10 @@
         {% if brecipe.category_name == 'breakfast' %}
             <li>
                 <div class="collapsible-header" style="
-                                                            background: url('{{brecipe.recipe_image}}');
-                                                            background-position: center;
-                                                            background-repeat: no-repeat;
-                                                            background-size: cover;">
+                    background: url('{{brecipe.recipe_image}}');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;">
                 </div>
                 <div class="collapsible-body">
                     <p class="font-bold">{{brecipe.recipe_name}}</p>
@@ -60,12 +64,10 @@
                     </div>
                 </div>
             </li>
-            {% endif %}
+        {% endif %}
         {% endfor %}
         </ul>
     </div>
-
-
     <div class="col s12 l4">
         <div>
             <h2 class="centertxt">Lunch</h2>
@@ -91,7 +93,7 @@
                     </div>
                 </div>
             </li>
-            {% endif %}
+        {% endif %}
         {% endfor %}
         </ul>
     </div>
@@ -120,7 +122,7 @@
                     </div>
                 </div>
             </li>
-            {% endif %}
+        {% endif %}
         {% endfor %}
         </ul>
     </div>
