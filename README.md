@@ -2,7 +2,7 @@
 
 # Vegan Day
 ...........................................................................................
-Vegan day is a cooking blog / app where the user can create, read, edit and delete vegan recipes. Recipes are sorted out by categories: breakfast, lunch and dinner. It this was the user can select his vegan day inspirations. 
+Vegan day is a cooking blog / app where the user can create, read, edit and delete vegan recipes. Recipes are sorted out by categories: breakfast, lunch and dinner. It this way, the user can select his vegan day inspirations. 
 
 # UX Write up
 ...........................................................................................
@@ -75,18 +75,19 @@ Navbar is responsive and in mobile version it is displayed as toggle drop down m
 - Footer
 
 ### Add recipe page
-- A form page to create new recipe. Form fields are: 
-> Select category
-> Recipe name
-> Short description
-> More about this recipe
-> Ingredients
-> Method
-> Add image 
-> Gluten free 
+- A form page to create new recipe. 
+Here all form fields are blank. Form fields are: 
+> Select category: for selecting which type of meal (category on the main page) this recipe will be asigned to.
+> Recipe name: short name displaied in the full_recipe.html as a title.
+> Short description: this short text will be shown in collapsable body of the accordion.
+> More about this recipe: full description of the recipe. Show only in the full recipe page. 
+> Ingredients: list of ingredients displayed in the small frame titled "Shopping list"
+> Method: descriptionof how to prepare a meal.
+> Add image: here user can paste the link for the image uploaded to inbb service. Here also user can see instruction on how to upload the image.  
+> Gluten free: a check box form.
 
 ### Edit recipe page
-- A form page to create new recipe. Form fields are: 
+- A form page to edit existing recipe. All the form fields are filled with the data set of a editable recipe. Page template is filled with data from mongoDB according to recipe Id. Form fields are mirroring add_recipe page: 
 > Select category
 > Recipe name
 > Short description
@@ -95,6 +96,11 @@ Navbar is responsive and in mobile version it is displayed as toggle drop down m
 > Method
 > Add image 
 > Gluten free 
+- Save button save all the implemented changes and redirect back to the main page. 
+
+### Full recipe page
+- The page is data representation of the recipe. This page can not be edited or changed. The layout of the page is different than edit_recipe.html or add_recipe.html. Here user see more apealing layout and also a banner image before the header. Page template is filled with data from mongoDB according to recipe Id.
+- At the bottom of the page there are two icons: EDIT and DELETE a page. 
 
 ### Footer
 - Logo in different color scheme featured (clickable - leads to home page)
@@ -103,7 +109,7 @@ Navbar is responsive and in mobile version it is displayed as toggle drop down m
 - COPYRIGHT stripe
 
 ### In the future:
-- user purchase history
+- Random recipe button 
 - more content
 
 
@@ -111,18 +117,17 @@ Navbar is responsive and in mobile version it is displayed as toggle drop down m
 ...........................................................................................
 ### Forms
 - all the form have validation features. all forms passed testing. 
-! card with products should accept only numbers. However, they do accept letter 'e'. This error has to be fixed later. 
+ 
 ### Buttons
 - all the buttons are linked correctly and fire up successfully 
-### Payment 
-- test payment with stripe technology was performed successfully 
-### Email 
-- email sent via REVIEW form as well as REQUEST form
-- emails were received in correct form and without errors
-### Travis 
-- Travis used for automatic validation on deployed site
+
+### links
+- social media links passed all tests and leads to correct page. 
+
+
 ### Responsivenes
-- site terted in google chrome developer tools as well as on desktop and mobile versions. All elements are responsive, the layout does not breat, elements are not overlaping. 
+- site terted in google chrome developer tools as well as on desktop and mobile versions. All elements are responsive, the layout does not break, elements are not overlaping. 
+
 ### Code validation
 - Python Code tested with PEP8. Python code adheres to PEP8 standards. (http://pep8online.com/checkresult)
     exception being E501 "line is too long"
@@ -133,12 +138,14 @@ Navbar is responsive and in mobile version it is displayed as toggle drop down m
 
 # DEPLOYMENT Write up
 ...........................................................................................
-My project was developed using GitPod IDE, committed to git and pushed to GitHub. Finally the code was wired up with AWS S3 where dynamic media content of shop products are stored. The following steps where taken to deploy my project.
+My project was developed using GitPod IDE, committed to git and pushed to GitHub. The following steps where taken to deploy my project. Heroku app connected to GitHub Code diffs, manual and auto deploys are available for this app. Automatic deploys from  master branch are enabled.
+
 ### From GitHub
 - Logged into GitHub.
 - Selected repository from the GitHub dashboard.
 - Clicked on "Open in GitPod button"
-- From gitpod I accessed the page via terminal coment "python3 manage.py runserver"
+- From gitpod I accessed the page via terminal coment "python3 app.py runserver"
+
 ### From Heroku
 - Logged into Heroku
 - Opened the pj-stickers project 
@@ -146,13 +153,9 @@ My project was developed using GitPod IDE, committed to git and pushed to GitHub
 - After the page is deployed I opened the app vie "Open App" button
 
 Website is now deployed and is available here:
-https://pj-stickers.herokuapp.com/
+https://vegan-day.herokuapp.com/
 My repository can be found here:
-https://github.com/pjachimowski/stickers
-
-## AWS s3
-- Media stored in AWS S3 bucket 
-- Static files and CSS sored in the project on Heroku
+https://github.com/pjachimowski/vegan
 
 
 # TECHNOLOGIES USED
@@ -162,38 +165,32 @@ https://github.com/pjachimowski/stickers
 - CSS
 - JavaScript
 - Python
-- django
-- Stripe payments
+- flask
+
 
 ### Libraries
-- Bootstrap (https://getbootstrap.com/)
+- Materialize (https://materializecss.com/)
 - Fontawesome (https://fontawesome.com/)
 
 ### Database
-- AWS s3
-- local sqlite
+- mongoDB
+- static files 
 
 ### Others
 - gradient generator CSS (www.ccbg.io)
-- Email JS (https://www.emailjs.com/)
 - Heroku cloud platform
-
-
-
 
 # Use of other code
 ...........................................................................................
-- footer source(edited)  https://colorlib.com/wp/bootstrap-footer/
 
 - I use fragments of the code from previous lessons of Code Institure.
 All codes were sourced from my own profile on GitHub portal
 Parts of the code were edited and adjust to page layout.
 
 ### Media
-Some stickers were downloaded for free picture collection https://www.pexels.com/
+Some images were downloaded for free picture collection https://www.pexels.com/
 Icons were taken from font awesome portal.
 Entire text was edited by author.
-
 
 
 # TESTING Write up
@@ -203,14 +200,6 @@ Entire text was edited by author.
 https://validator.w3.org/nu/ 
 
 - All the forms passed testing. All the forms featured with form validation code. 
-
-
-## Password reset
-- Password reset tested and passed successfuly. It may display following error:
-SMTPAuthenticationError at /accounts/password-reset/
-Due to google account default setups. 
-Last time updated: 01.05.2020 after which averything was working correctly. 
-
 
 ### Acknowledgments
 
