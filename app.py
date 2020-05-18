@@ -1,21 +1,22 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, request
+from flask import Flask, render_template, redirect, url_for, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'vegan'
-app.config["MONGO_URI"]='mongodb+srv://root:r00tUser@myfirstcluster-xvp8g.mongodb.net/vegan?retryWrites=true&w=majority'
+app.config["MONGO_URI"] ='mongodb+srv://root:r00tUser@myfirstcluster-xvp8g.mongodb.net/vegan?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
+
 
 @app.route('/')
 @app.route('/get_vegan_day')
 def get_vegan_day():
-    brecipes=mongo.db.recipes.find()
-    lrecipes=mongo.db.recipes.find()
-    drecipes=mongo.db.recipes.find()
+    brecipes = mongo.db.recipes.find()
+    lrecipes = mongo.db.recipes.find()
+    drecipes = mongo.db.recipes.find()
     print(brecipes)
     print(lrecipes)
     print(drecipes)
