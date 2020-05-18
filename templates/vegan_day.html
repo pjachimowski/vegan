@@ -75,11 +75,10 @@
         {% if lrecipe.category_name == 'lunch' %}
             <li>
                 <div class="collapsible-header" style="
-                                                            background: url('{{lrecipe.recipe_image}}');
-                                                            background-position: center;
-                                                            background-repeat: no-repeat;
-                                                            background-size: cover;">
-
+                    background: url('{{lrecipe.recipe_image}}');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;">
                 </div>
                 <div class="collapsible-body">
                     <p class="font-bold">{{lrecipe.recipe_name}}</p>
@@ -96,8 +95,6 @@
         {% endfor %}
         </ul>
     </div>
-
-
     <div class="col s12 l4">
         <div>
             <h2 class="centertxt">Dinner</h2>
@@ -107,10 +104,10 @@
         {% if drecipe.category_name == 'dinner' %}
             <li>
                 <div class="collapsible-header" style="
-                                                            background: url('{{drecipe.recipe_image}}');
-                                                            background-position: center;
-                                                            background-repeat: no-repeat;
-                                                            background-size: cover;">
+                    background: url('{{drecipe.recipe_image}}');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;">
                 </div>
                 <div class="collapsible-body">
                     <p class="font-bold">{{drecipe.recipe_name}}</p>
@@ -127,40 +124,5 @@
         {% endfor %}
         </ul>
     </div>
-
-
 </div>
-
 {% endblock %}
-
-<!-- </div>
-
-<a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn ">DELETE</a>
-                        <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn  blue">EDIT</a>
-
-
-
-
-
-
-
-
-
-
-<div class="inline-actions">
-            <a
-              href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
-              class="waves-effect waves-light btn btn-small"
-              >DELETE</a
-            >
-            <a
-              href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
-              class="waves-effect waves-light btn btn-small blue"
-              >EDIT</a
-            >
-          </div> -->
-
-
-
-
-          <!-- <a href="{{url_for('full_recipe', recipe_id=recipe._id)}}" class="btn-1">more</a> -->

@@ -112,7 +112,6 @@ Here all form fields are blank. Form fields are:
 - Random recipe button 
 - more content
 
-
 # TESTING Write up
 ...........................................................................................
 ### Forms
@@ -123,7 +122,6 @@ Here all form fields are blank. Form fields are:
 
 ### links
 - social media links passed all tests and leads to correct page. 
-
 
 ### Responsivenes
 - site terted in google chrome developer tools as well as on desktop and mobile versions. All elements are responsive, the layout does not break, elements are not overlaping. 
