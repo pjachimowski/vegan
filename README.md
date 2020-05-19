@@ -40,20 +40,13 @@ The websites functionality benefits user with:
 ## WIREFRAMES
 An early stage draft of the app. Changes appied. 
 
-### Home page top
-![](static/images/wireframes/home_page_top.jpg)
-### Home page about
-![](static/images/wireframes/home_page_about.jpg)
-### Home page benefits
-![](static/images/wireframes/home_page_benefits.jpg)
-### Home page quotes
-![](static/images/wireframes/home_page_quotes.jpg)
-### Footer
-![](static/images/wireframes/footer.jpg)
-### Gallery
-![](static/images/wireframes/gallery.jpg)
-### Request Form
-![](static/images/wireframes/request_form.jpg)
+### Home page
+![](static/css/wireframes/vegan_day_wireframes_1.jpg)
+### Full recipe page
+![](static/images/wireframes/vegan_day_wireframes_2.jpg)
+### Add recipe / edit recipe form
+![](static/images/wireframes/vegan_day_wireframes_3.jpg)
+
 
 
 # FEATURES
