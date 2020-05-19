@@ -193,5 +193,9 @@ https://validator.w3.org/nu/
 - All the forms passed testing. All the forms featured with form validation code. 
 
 ### Acknowledgments
+- recipes and images were taken from several other websites:
+> https://www.veggioke.com/
+> https://www.bbcgoodfood.com/recipes/collection/vegan
+> https://www.feastingathome.com/vegan-dinner-recipes/
 
 - I received inspiration for this project from various lessons conducted at Code Institute
